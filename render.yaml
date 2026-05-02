@@ -19,7 +19,6 @@ services:
         fromDatabase:
           name: clean-city-db
           property: connectionString
-      # Add these in Render Dashboard manually
       - key: CLERK_PUBLISHABLE_KEY
         sync: false
       - key: CLERK_SECRET_KEY
@@ -28,11 +27,6 @@ services:
   # 2. Frontend Web App
   - type: web
     name: clean-city-web
-    runtime: static
-    buildCommand: pnpm install && pnpm -C artifacts/cleancity run build
+    env: static
     staticPublishDir: artifacts/cleancity/dist
-    envVars:
-      - key: VITE_API_URL
-        value: https://clean-city-api.onrender.com
-      - key: VITE_CLERK_PUBLISHABLE_KEY
-        sync: false
+    buildCommand: pnpm install && pnpm -C artifacts/cleancity run build
