@@ -28,7 +28,7 @@ services:
   # 2. Frontend Web App
   - type: web
     name: clean-city-web
-    env: static
+    runtime: static
     buildCommand: pnpm install && pnpm -C artifacts/cleancity run build
     staticPublishDir: artifacts/cleancity/dist
     envVars:
