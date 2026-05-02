@@ -25,7 +25,8 @@ services:
         sync: false
 
   # 2. Frontend Web App
-  - type: static
+  - type: web
     name: clean-city-web
-    staticPublishDir: artifacts/cleancity/dist
+    env: static
     buildCommand: pnpm install && pnpm -C artifacts/cleancity run build
+    staticPublishPath: artifacts/cleancity/dist
