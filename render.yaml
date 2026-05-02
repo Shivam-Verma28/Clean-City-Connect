@@ -22,7 +22,7 @@ services:
         sync: false
 
   # 2. Frontend Web App
-  - type: web
+  - type: static
     name: clean-city-web
     env: static
     plan: free
